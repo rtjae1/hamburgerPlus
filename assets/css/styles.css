@@ -1,0 +1,89 @@
+/* ~~~~~~~~~~~~~~ */
+/* color variables */
+/* ~~~~~~~~~~~~~~ */
+:root {
+  --primaryColor: #444444;
+  --secondaryColor: #ffdd67;
+  --tertiaryColor: #535945;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(var(--primaryColor), var(--secondaryColor), var(--tertiaryColor));
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* nav-icon-7 */
+.nav-icon-7 {
+  width: 35px;
+  height: 30px;
+  margin: 10px 10px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.nav-icon-7 span {
+  width: 100%;
+  height: 4px;
+  background-color: var(--tertiaryColor);
+  position: absolute;
+  border-radius: 2px;
+  display: block;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.nav-icon-7 span:nth-child(1) {
+  top: 0px;
+  left: 0px;
+}
+
+.nav-icon-7 span:nth-child(2) {
+  top: 13px;
+  left: 0px;
+}
+
+.nav-icon-7 span:nth-child(3) {
+  bottom: 0px;
+  left: 0px;
+}
+
+.nav-icon-7.open span:nth-child(1) {
+  transform: rotate(90deg);
+  top: 13px;
+}
+
+.nav-icon-7.open span:nth-child(2) {
+  transform: scale(0);
+  transition-duration: 50ms;
+}
+
+.nav-icon-7.open span:nth-child(3) {
+  top: 13px;
+}
+
+.nav-icon-7:not(.open):hover span:nth-child(1) {
+  transform: scaleX(.8);
+}
+
+.nav-icon-7:not(.open):hover span:nth-child(2) {
+  transform: scaleX(.5);
+}
+
+.nav-icon-7:not(.open):hover span:nth-child(3) {
+  transform: scaleX(.8);
+}
